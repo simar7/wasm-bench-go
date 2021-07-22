@@ -3,11 +3,17 @@ wasm runtime benchmarks for go
 
 
 ```
-cpu: Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz
-BenchmarkWasmer-8           1000             13426 ns/op             208 B/op         12 allocs/op
-BenchmarkWasmer-8           1000             12887 ns/op             208 B/op         12 allocs/op
-BenchmarkWasmer-8           1000             13570 ns/op             208 B/op         12 allocs/op
-BenchmarkWasmtime-8         1000             17136 ns/op             312 B/op         20 allocs/op
-BenchmarkWasmtime-8         1000             15710 ns/op             314 B/op         20 allocs/op
-BenchmarkWasmtime-8         1000             16371 ns/op             313 B/op         20 allocs/op
+make bench | prettybench -no-passthrough
+benchmark               iter       time/iter   bytes alloc         allocs
+---------               ----       ---------   -----------         ------
+BenchmarkWasmtime-8   100000   3488.00 ns/op      311 B/op   20 allocs/op
+BenchmarkWasmtime-8   100000   3614.00 ns/op      311 B/op   20 allocs/op
+BenchmarkWasmtime-8   100000   3543.00 ns/op      311 B/op   20 allocs/op
+BenchmarkWasmer-8     100000   1997.00 ns/op      208 B/op   12 allocs/op
+BenchmarkWasmer-8     100000   1990.00 ns/op      208 B/op   12 allocs/op
+BenchmarkWasmer-8     100000   1950.00 ns/op      208 B/op   12 allocs/op
+BenchmarkGasm-8       100000    331.50 ns/op      288 B/op    9 allocs/op
+BenchmarkGasm-8       100000    334.40 ns/op      288 B/op    9 allocs/op
+BenchmarkGasm-8       100000    332.20 ns/op      288 B/op    9 allocs/op
+
 ```
